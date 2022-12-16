@@ -33,7 +33,7 @@ fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b0')
     jsondatadiv(data, datadiv);
   })
   .catch((error) => {
-    fetch('../data/licencje.json')
+    fetch('../EDI/data/licencje.json')
       .then((response) => response.json())
       .then((data) => {
         jsondatadiv(data, datadiv);
