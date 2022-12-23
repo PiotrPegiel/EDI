@@ -556,6 +556,46 @@ video {
   margin-right: auto;
 }
 
+.mt-96 {
+  margin-top: 24rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-48 {
+  margin-top: 12rem;
+}
+
+.mt-72 {
+  margin-top: 18rem;
+}
+
+.mt-80 {
+  margin-top: 20rem;
+}
+
+.mt-120 {
+  margin-top: 50rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.mb-36 {
+  margin-bottom: 9rem;
+}
+
 .flex {
   display: flex;
 }
@@ -568,6 +608,30 @@ video {
   height: 6rem;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-120 {
+  width: 50rem;
+}
+
 .basis-1\/5 {
   flex-basis: 20%;
 }
@@ -576,8 +640,24 @@ video {
   flex-basis: 25%;
 }
 
+.auto-cols-max {
+  grid-auto-columns: max-content;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -588,8 +668,28 @@ video {
   flex-direction: column;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.content-center {
+  align-content: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-6 {
@@ -602,6 +702,10 @@ video {
 
 .overflow-auto {
   overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .overscroll-auto {
@@ -622,6 +726,26 @@ video {
 
 .pb-20 {
   padding-bottom: 5rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-96 {
+  padding-top: 24rem;
+}
+
+.pt-44 {
+  padding-top: 11rem;
+}
+
+.pt-40 {
+  padding-top: 10rem;
+}
+
+.pt-48 {
+  padding-top: 12rem;
 }
 
 .text-center {
@@ -657,11 +781,19 @@ video {
   .md\:h-48 {
     height: 12rem;
   }
+
+  .md\:h-40 {
+    height: 10rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:h-60 {
     height: 15rem;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
   }
 }
 
@@ -669,10 +801,30 @@ video {
   .xl\:h-96 {
     height: 24rem;
   }
+
+  .xl\:h-60 {
+    height: 15rem;
+  }
+
+  .xl\:h-40 {
+    height: 10rem;
+  }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:h-120 {
     height: 50rem;
+  }
+
+  .\32xl\:h-96 {
+    height: 24rem;
+  }
+
+  .\32xl\:h-60 {
+    height: 15rem;
+  }
+
+  .\32xl\:h-40 {
+    height: 10rem;
   }
 }

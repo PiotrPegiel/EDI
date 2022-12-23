@@ -9,63 +9,29 @@
         <link rel="stylesheet" href="dist/output.css">
     </head>
     <body>
-        <header>
-            Sklep z licencjami oprogramowania<br>
+        <header class="text-center ">
+            <p class="text-2xl">Sklep z licencjami oprogramowania<br>
             Autorzy:<br>
             Piotr Pęgiel<br>
             Mateusz Kubaty<br>
-            Tymon Sałaciak
+            Tymon Sałaciak</p>
         </header>
         <main>
             <div class="container mx-auto overflow-auto relative">
-                <div class="dane_c, container mx-auto overscroll-auto overflow-auto 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="dane_id">
-                    <div class='data_element, pb-20'>
-                        <div class='data_element_nazwaproduktu, justify-center flex text-4xl font-semibold p-3'>Nazwa Produktu</div>
-                        <div class='data_element_otherinfo, flex flex-col text-2xl'>
-                            <div class='flex flex-row justify-center p-2'><div class="basis-1/5 text-center">Id: Id</div><div class="basis-1/5 text-center">Producent: Nazwa Producenta</div><div class="basis-1/5 text-center">Dostępność: True</div><div class="basis-1/5 text-center">Dostępna Ilość: 5</div><div class="basis-1/5 text-center">Cena: 5ZŁ</div></div>
-                            <div class='flex flex-row justify-center p-2'><div class="basis-1/4 text-center">Sprzedanych: 10</div><div class="basis-1/4 text-center">Dodane: TAK</div><div class="basis-1/4 text-center">Wersja: 3</div><div class="basis-1/4 text-center">Gwarancja: 12</div></div>
-                            <div class='flex justify-center p-2'>Opis: OpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpisOpis</div>
-                        </div>
-                        <div class='data_element_opinie, grid grid-cols-5 justify-center text-xl gap-6'>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                            <div class='data_element_opinie_element, text-center'>
-                                <div>Id: 1</div><div>Ocena: 5</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="dane_c, container mx-auto overscroll-auto overflow-auto 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="dane_id"></div>
             </div>
         </main>
-        <footer>
-            <div class="chart" id="chart1"></div>
-            <div class="chart" id="chart2"></div>
+        <footer class="conteiner flex flex-col justify-center">
+            <div class="container relative mx-auto text-center">
+                <p class="text-2xl mt-36">Wykres przedstawiający zależność ceny do wysokości opinii dla pierwszych 10 produktów</p>
+                <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="chart1"></canvas>
+            </div>
+            <div class="mx-auto relative 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24 text-center">
+                <p class="text-2xl mt-36">Wykres przedstawiający ilość produktów dla danych długości gwarancji w miesiącach</p>
+                <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="chart2"></canvas>
+            </div>
         </footer>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script/script.js"></script>
 </html>
