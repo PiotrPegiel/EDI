@@ -1,19 +1,26 @@
 function jsondatadiv(data,selector){
   str=""
   for(let i = 0; i < data.length; i++) {
-    str += "<div class='data_element, pb-20'>"+
-    "<div class='data_element_nazwaproduktu, justify-center flex text-4xl font-semibold p-3'>"+data[i]['Nazwa_Produktu']+"</div>"+
-    "<div class='data_element_otherinfo, flex flex-col text-2xl'>"+
-    "<div class='flex flex-row justify-center p-2'>"+"<div class='basis-1/5 text-center'>Id: "+data[i]['Id']+"</div>"+"<div class='basis-1/5 text-center'>Producent: "+data[i]['Nazwa_Producenta']+"</div>"+"<div class='basis-1/5 text-center'>Dostępność: "+data[i]['Czy_dostepne']+"</div>"+
-    "<div class='basis-1/5 text-center'>Dostępna Ilość: "+data[i]['Ilosc']+"</div>"+"<div class='basis-1/5 text-center'>Cena: "+data[i]['Cena']+"</div></div>"+"<div class='flex flex-row justify-center p-2'>"+"<div class='basis-1/4 text-center'>Sprzedanych: "+data[i]['Ilosc_sprzedanych']+"</div>"+
-    "<div class='basis-1/4 text-center'>Dodane: "+data[i]['Data_dodania']+"</div>"+"<div class='basis-1/4 text-center'>Wersja: "+data[i]['Wersja']+"</div>"+"<div class='basis-1/4 text-center'>Gwarancja: "+data[i]['Gwarancja']+"</div></div>"+
-    "<div class='flex justify-center p-2'>Opis: "+data[i]['Opis']+"</div>"+"</div>";
-    if(data[i]['Opinie'].length>12){
+    str += "<div class='data_element,py-4 my-7 mx-3 rounded-xl border-2 border-black py-1 px-5 shadow-lg shadow-gray-500 ml-2'>"+//główny div
+    "<div class='data_element_nazwaproduktu, justify-center flex text-4xl font-semibold'><p class=''>"+data[i]['Nazwa_Produktu']+"</p></div>"+//nazwa produktu
+    "<div class='data_element_otherinfo, flex flex-col text-2xl'>"+//Informacje o produkcie
+    "<div class='grid grid-cols-3 gap-8 p-2'>"+//div informacji o produkcie
+    "<div class='text-center'>Id: "+data[i]['Id']+"</div>"+
+    "<div class='text-center'>Producent: "+data[i]['Nazwa_Producenta']+"</div>"+
+    "<div class='text-center'>Dostępność: "+data[i]['Czy_dostepne']+"</div>"+
+    "<div class='text-center'>Dostępna Ilość: "+data[i]['Ilosc']+"</div>"+
+    "<div class='text-center text-red-500'>Cena: "+data[i]['Cena']+"</div>"+
+    "<div class='text-center'>Sprzedanych: "+data[i]['Ilosc_sprzedanych']+"</div>"+
+    "<div class='text-center'>Dodane: "+data[i]['Data_dodania']+"</div>"+
+    "<div class='text-center'>Wersja: "+data[i]['Wersja']+"</div>"+
+    "<div class='text-center'>Gwarancja: "+data[i]['Gwarancja']+"</div>"+"</div>"+//koniec - div informacji o produkcie
+    "<div class='flex justify-center p-2 my-8'>Opis: "+data[i]['Opis']+"</div>"+"</div>";//div opisu, koniec - Informacje o produkcie
+    if(data[i]['Opinie'].length>12){//div opinii
       str+="<div class='data_element_opinie, flex flex-nowrap overflow-x-auto text-xl gap-6'>";
     } else {
       str+="<div class='data_element_opinie, flex flex-nowrap overflow-x-auto text-xl gap-6 justify-center'>";
     }
-    for(let j=0 ; j<data[i]['Opinie'].length ; j++){
+    for(let j=0 ; j<data[i]['Opinie'].length ; j++){//opinie
        str+="<div class='data_element_opinie_element, text-center'>"+
         "<div>Id: "+data[i]['Opinie'][j]['Id']+"</div><div class='w-24'>Ocena: "+data[i]['Opinie'][j]['Rating']+"</div></div>";
     }
@@ -128,7 +135,7 @@ var datadiv = document.querySelector("#dane_id");
 var chart1 = document.querySelector("#chart1");
 var chart2 = document.querySelector("#chart2");
 
-fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b000')
+fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b00')
   .then((response) => {
     if (!response.ok) {
       throw Error(response.statusText);

@@ -2,34 +2,47 @@
 <html>
     <head>
         <title>Sklep z licencjami oprogramowania</title>
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="img/icon.png">
         <meta name="description" content="EDI - FINAL GROUP PROJECT">
         <meta name="author" content="Piotr Pęgiel 227601, Mateusz Kubaty 227552, Tymon Sałaciak 226036">
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="dist/output.css">
     </head>
-    <body>
-        <header class="text-center ">
-            <p class="text-2xl">Sklep z licencjami oprogramowania<br>
-            Autorzy:<br>
-            Piotr Pęgiel<br>
-            Mateusz Kubaty<br>
-            Tymon Sałaciak</p>
+    <body class="bg-gray-100">
+        <header>
+            <div class="container mx-auto text-center justify-center text-2xl bg-tymon-1 pt-4">
+                <div class="pb-4 bg-tymon-1">
+                    <p>Sklep z licencjami oprogramowania</p>
+                </div>
+                <div class="mb-4 bg-tymon-1">
+                    <p>Autorzy:</p>
+                </div>
+                <div class="flex flex-row gap-7 justify-center text-2xl pb-4">
+                    <p>Piotr Pęgiel</p>
+                    <p>Mateusz Kubaty</p>
+                    <p>Tymon Sałaciak</p>
+                </div>
+            </div>
         </header>
         <main>
-            <div class="container mx-auto overflow-auto relative">
-                <div class="dane_c, container mx-auto overscroll-auto overflow-auto 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="dane_id"></div>
+            <div class="container mx-auto overflow-auto relative bg-white">
+                <div class="dane_c, container mx-auto overscroll-auto overflow-auto 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24 rounded-md" id="dane_id"></div>
+            </div>
+            <div class="container mx-auto flex flex-col justify-center bg-white pb-72">
+                <div class="container relative mx-auto text-center bg-white">
+                    <p class="text-2xl mt-36">Wykres zależności ceny do wysokości opinii dla pierwszych 10 produktów</p>
+                    <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="chart1"></canvas>
+                </div>
+                <div class="container mx-auto relative 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24 text-center justify-center bg-white">
+                    <p class="text-2xl mt-36">Wykres przedstawiający ilość produktów dla danych długości gwarancji w miesiącach</p>
+                    <div class="container">
+                        <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24 mx-auto" id="chart2"></canvas>
+                    </div>
+                </div>
             </div>
         </main>
-        <footer class="conteiner flex flex-col justify-center">
-            <div class="container relative mx-auto text-center">
-                <p class="text-2xl mt-36">Wykres przedstawiający zależność ceny do wysokości opinii dla pierwszych 10 produktów</p>
-                <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="chart1"></canvas>
-            </div>
-            <div class="mx-auto relative 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24 text-center">
-                <p class="text-2xl mt-36">Wykres przedstawiający ilość produktów dla danych długości gwarancji w miesiącach</p>
-                <canvas class="chart, 2xl:h-120 xl:h-96 lg:h-60 md:h-48 sm:h-36 h-24" id="chart2"></canvas>
-            </div>
+        <footer class="container text-right mx-auto bg-gray-500 text-white">
+            Copyright &copy; 2023 Piotr Pęgiel, Mateusz Kubaty, Tymon Sałaciak
         </footer>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

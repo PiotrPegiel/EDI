@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       spacing:{
         '120':'50rem'
+      },
+      colors:{
+        "tymon":{1:"rgb(176, 180, 219)"}
       }
     },
   },
