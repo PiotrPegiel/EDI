@@ -1,5 +1,5 @@
 function jsondatadiv(data,selector){
-  str=""
+  var str="";
   for(let i = 0; i < data.length; i++) {
     str += "<div class='data_element,py-4 my-7 mx-3 rounded-xl border-2 border-black py-1 px-5 shadow-lg shadow-gray-500 ml-2'>"+//główny div
     "<div class='data_element_nazwaproduktu, justify-center flex text-4xl font-semibold'><p class=''>"+data[i]['Nazwa_Produktu']+"</p></div>"+//nazwa produktu
