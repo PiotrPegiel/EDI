@@ -149,7 +149,7 @@ fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b00')
     charterdonut(data,chart2);
   })
   .catch((error) => {
-    fetch('../EDI/data/licencje.json')
+    fetch('../data/licencje.json')
       .then((response) => response.json())
       .then((data) => {
         jsondatadiv(data, datadiv);
