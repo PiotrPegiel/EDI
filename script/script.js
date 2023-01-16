@@ -65,7 +65,7 @@ function charterdonut(data,selector){
     }
   }
 
-  new Chart(selector, {
+  globalThis.createdchartdonut = new Chart(selector, {
     type: "doughnut",
     data: {
       labels: ['6 miesiąc','12 miesiące','18 miesiące','24 miesiące','30 miesiące','36 miesiące','42 miesiące','48 miesiące'],
@@ -95,7 +95,7 @@ function charterbar(data, selector){
     opinie[i]=sum
   }
 
-  new Chart(selector, {
+  globalThis.createdchartbar = new Chart(selector, {
     type: "bar",
     data: {
       labels: hajs,
@@ -135,25 +135,64 @@ var datadiv = document.querySelector("#dane_id");
 var chart1 = document.querySelector("#chart1");
 var chart2 = document.querySelector("#chart2");
 
-fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b00')
-  .then((response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    } else {
-      return response.json();
-    }
-  })
-  .then((data) => {
-    jsondatadiv(data, datadiv);
-    charterbar(data,chart1);
-    charterdonut(data,chart2);
-  })
-  .catch((error) => {
-    fetch('../data/licencje.json')
+document.querySelector("#button1").addEventListener("click", () => {
+  createdchartdonut.destroy();
+  createdchartbar.destroy();
+  document.querySelector("#button1").innerHTML = "Data 1 - current"
+  document.querySelector("#button2").innerHTML = "Data 2"
+  document.querySelector("#button3").innerHTML = "Data 3"
+  mainsitebuild("licencje")
+})
+document.querySelector("#button2").addEventListener("click", () => {
+  createdchartdonut.destroy();
+  createdchartbar.destroy();
+  document.querySelector("#button1").innerHTML = "Data 1"
+  document.querySelector("#button2").innerHTML = "Data 2 - current"
+  document.querySelector("#button3").innerHTML = "Data 3"
+  mainsitebuild("licencje2")
+})
+document.querySelector("#button3").addEventListener("click", () => {
+  createdchartdonut.destroy();
+  createdchartbar.destroy();
+  document.querySelector("#button1").innerHTML = "Data 1"
+  document.querySelector("#button2").innerHTML = "Data 2"
+  document.querySelector("#button3").innerHTML = "Data 3 - current"
+  mainsitebuild("licencje3")
+})
+
+function mainsitebuild(src){
+
+  //Oryginalny kod z Mokaroo
+// fetch('https://my.api.mockaroo.com/licencje.json?key=dbf334b0')
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw Error(response.statusText);
+//     } else {
+//       return response.json();
+//     }
+//   })
+//   .then((data) => {
+//     jsondatadiv(data, datadiv);
+//     charterbar(data,chart1);
+//     charterdonut(data,chart2);
+//   })
+//   .catch((error) => {
+//     fetch('../data/'+src+'.json')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         jsondatadiv(data, datadiv);
+//         charterbar(data,chart1);
+//         charterdonut(data,chart2);
+//       })
+//   })
+fetch('../EDI/data/'+src+'.json')
       .then((response) => response.json())
       .then((data) => {
         jsondatadiv(data, datadiv);
         charterbar(data,chart1);
         charterdonut(data,chart2);
       })
-  })
+
+}
+
+document.onload = mainsitebuild("licencje")
